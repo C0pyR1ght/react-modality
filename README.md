@@ -1,7 +1,4 @@
-# React Dynamic Sheet
-
-To install:
-`npm i react-dynamic-sheet` or `yarn add react-dynamic-sheet` 
+# React Modality
 
 Styleguide:
 https://rsoury.github.io/react-dynamic-sheet/
@@ -11,27 +8,33 @@ React Dynamic Sheet is react component to provide mobile users an app like, swip
 #### What does it look like?
 ![Demonstration of Sheet on Mobile](https://media.giphy.com/media/kcUcYwklHAE4BEdo43/giphy.gif)
 
-#### How to use it? 
-```jsx
-import DynamicSheet from 'react-dynamic-sheet';
-import { EntryButton, Box } from './your-components/'
 
-const App = () => {
-  const [checkout, setCheckout] = useState(false);
-  const abort = () => setCheckout(false);
-  const startCheckout = () => setCheckout(true);
-  const confirmClose = true;
+## Get started
+
+### Quick start
+
+#### npm
+```
+npm install react-modality
+```
+
+#### yarn
+```
+yarn add react-modality
+```
+
+```jsx
+import ModalSheet from 'react-modality';
+
+const MyComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <DynamicSheet
-        isOpen={checkout}
-        onClose={abort}
-        confirmClose={confirmClose}
-      >
-        <Box sx={{ padding: "200px 40px" }}>Hello Checkout</Box>
-      </DynamicSheet>
-      <EntryButton onClick={startCheckout} />
+      <button onClick={()=> setIsOpen(!isOpen)}>Show Modal</button>
+      <ModalSheet isOpen={isOpen} setIsOpen={setIsOpen}>
+        <H1>My Content</h1>
+      </ModalSheet>
     </>
   );
 }
