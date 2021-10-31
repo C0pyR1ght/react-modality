@@ -1,4 +1,4 @@
-# React Dynamic Sheet
+# Fork of React Dynamic Sheet
 
 To install:
 `npm i react-dynamic-sheet` or `yarn add react-dynamic-sheet` 
